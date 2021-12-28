@@ -3,7 +3,7 @@ spec-version: v1.0
 name: alteiademo/pc2dsm
 display-name: PointCloud to Digital Surface Model (.las) (convertion)
 version: 1.0.0
-description: Generate a DSM (.tif) from a PointCloud (.las)
+description: Generates a DSM (.tif) from a PointCloud (.las)
 docker-image: registry-1.docker.io/michaeldelagarde/pc2dsm:latest
 instance-type: small
 volume-size: 20

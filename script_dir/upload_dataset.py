@@ -18,4 +18,4 @@ def upload_dataset(file_path, project_id, mission_id, script_dir):
 
 if __name__ == "__main__":
 
-	upload_dataset('../work_dir/output_dsm.tif', '61c1d5a73e614e00085c6a01', '61c4aeffd730570008b5e7c9', './')
+	upload_dataset('../work_dir/max.tif', '61c1d5a73e614e00085c6a01', '61c4aeffd730570008b5e7c9', './')

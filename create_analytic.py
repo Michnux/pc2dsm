@@ -5,8 +5,10 @@ import alteia
 sdk = alteia.SDK(config_path='./config-connections.json')
 
 
-analytic = sdk.analytics.search(name="alteiademo/pc2dsm")[0]
-sdk.analytics.delete(analytic=analytic.id)
+analytic = sdk.analytics.search(name="alteiademo/pc2dsm")
+if len(analytic)>0:
+	analytic=analytic[0]
+	sdk.analytics.delete(analytic=analytic.id)
 
 sdk.analytics.create(name="alteiademo/pc2dsm",
 	version="1.0.0",

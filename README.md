@@ -1,18 +1,9 @@
 ## Description of the Analytic:
 
-A symplistic approach to generate a PlantHeight format from a .las file
+A symplistic approach to generate a Digital Surface Model (DSM) (.tif) from a Point Cloud (.las)
 
-PlantHeight is a raster format (.tif) with 1 band (DSM like), where the elevation at point (x,y) is the heigth of the vegetation from the ground.
-The mothod to generate a PlantHeight is the following:
-- generate a raster from the .las taking the maximum value of the point cloud at each point of the grid (supposedly the top of the trees)
-- generate a raster from the .las taking the minimum value of the point cloud at each point of the grid (supposedly the ground level)
-- differentiate both to obtain the PlandHeight
-
-
-## Usage
-
-The PlantHeight format is needed for algos such as Tree counting.
-Hence this analytic can be part of a workflow from .las to tree counting.
+The method to generate a DSM is the following:
+- generate a raster from the .las taking the maximum z value of the point cloud at each point of the grid (supposedly the top of the trees)
 
 
 ## Inputs:
@@ -28,8 +19,8 @@ The Grid Size: length (in m) of 1pix of the raster grid
 ## Outputs:
 
 A raster file (.tif)
-Aith the parametrized grid size
-Categorized as 'vegetation heights'
+With the parametrized grid size
+Categorized as 'DSM'
 
 
 ## Analytics creation

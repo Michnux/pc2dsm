@@ -1,0 +1,1 @@
+{"outputs": {"output_dsm": {"type": "raster", "format": "tif", "name": "output_dsm", "components": [{"name": "output_dsm", "path": "/home/work_dir/output.tif"}]}}, "version": "v1.0"}

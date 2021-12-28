@@ -41,6 +41,22 @@ def pc2dsm(file_path, grid_size, horizontal_srs_wkt, WORKING_DIR):
 	#generate rasters: max (description of pipelines in .json files)
 	subprocess.run('pdal pipeline '+str(WORKING_DIR/'pipeline_max.json'), shell=True)
 
+
+	logging.debug('adding a crs to the raster...')
+
+	dataset_max = rio.open(WORKING_DIR/'max.tif')
+
+	new_dataset = rio.open(WORKING_DIR/'output.tif', 'w',
+									driver = dataset_max.driver,
+									nodata = dataset_max.nodata,
+									height=dataset_max.height, width=dataset_max.width,
+									count=dataset_max.count, dtype=rio.float64,
+									crs=crs_las, transform=dataset_max.transform)
+
+	band_max = dataset_max.read(1)
+
+	new_dataset.write(band_max, 1)
+
 	logging.debug('All done')
 
 

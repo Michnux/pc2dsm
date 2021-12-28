@@ -64,17 +64,17 @@ def main():
 
 	logging.debug('Generating outputs.json file...')
 
-	outpath = WORKING_DIR / 'max.tif'
+	outpath = WORKING_DIR / 'output.tif'
 	output = {
 		"outputs": {
-			"dsm": {  # Must match the name of deliverable in rust-detector.yaml
+			"output_dsm": {  # Must match the name of deliverable in rust-detector.yaml
 				"type": "raster",
 				"format": "tif",
-				# "categories": ["PlantHeight"],
-				"name": "dsm",
+				# "categories": ["DSM"],
+				"name": "output_dsm",
 				"components": [
 					{
-						"name": "output",
+						"name": "output_dsm",
 						# "filename": "output.tif",
 						"path": str(outpath)
 					}
