@@ -70,24 +70,23 @@ def main():
 			"output_dsm": {  # Must match the name of deliverable in rust-detector.yaml
 				"type": "raster",
 				"format": "tif",
-				# "categories": ["DSM"],
 				"name": "output_dsm",
 				"components": [
 					{
-						"name": "output_dsm",
-						# "filename": "output.tif",
+						"name": "raster",
 						"path": str(outpath)
 					}
 				]
 			}
 		},
-		"version": "v1.0"
+		"version": "0.1"
 	}
+
 	with open(WORKING_DIR / 'outputs.json', 'w+') as f:
 		json.dump(output, f)
 
-	script_dir = str(SCRIPT_DIR)
-	upload_dataset(str(outpath), project_id, mission_id, script_dir)
+	# script_dir = str(SCRIPT_DIR)
+	# upload_dataset(str(outpath), project_id, mission_id, script_dir)
 
 	logging.debug('End.')
 
